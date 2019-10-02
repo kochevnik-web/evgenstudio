@@ -1,5 +1,7 @@
 jQuery( document ).ready( function( $ ) {
 
+    new WOW().init();
+
     setTimeout(function(){
         $('.preloader').fadeOut(700);
     }, 1000);
