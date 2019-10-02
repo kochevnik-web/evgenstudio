@@ -21,7 +21,22 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+		?>
 
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h2>Интернет-решения для развития вашего бизнеса</h2>
+					</div>
+					<div class="col-md-7">
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<?php
 
 		endwhile; // End of the loop.
 		?>
