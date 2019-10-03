@@ -67,3 +67,32 @@ h3, .h3 {
         transform: translateY(0) translateX(0);
     }
 }
+
+.site-background-right {
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    background-color: #2E3E43;
+}
+
+.main-content-start-back {
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes main-content-start {
+    0%{
+        background-color: #01B8ED;
+    }
+    100%{
+        background-color: #2E3E43;
+    }
+}
+
+@keyframes main-content-start-back {
+    0%{
+        background-color: #2E3E43;
+    }
+    100%{
+        background-color: #01B8ED;
+    }
+}

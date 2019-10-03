@@ -33,7 +33,7 @@ get_header();
 						<img class="wow fadeInUp" data-wow-delay="2s" data-wow-duration="0.5s" src="<?php echo get_template_directory_uri() . '/img/main-list.png'; ?>" alt="">
 					</div>
 				</div>
-				<div class="row">
+				<div class="row main-content">
 					<div class="col-md-5">
 						<h3 class="mb-4">Мы</h3>
 						<p>
@@ -49,6 +49,9 @@ get_header();
 Хотите сосредоточиться на решении актуальных бизнес-задач и не вспоминать об IT в вашей компании? Поручите нам обслуживание вашей IT инфраструктуры!</p>
 
 
+					</div>
+					<div class="col-md-7 align-items-center d-flex">
+						<img class="wow fadeInUp" data-wow-delay="2s" data-wow-offset="150" data-wow-duration="0.5s" src="<?php echo get_template_directory_uri() . '/img/list-2.png'; ?>" alt="">
 					</div>
 				</div>
 			</div>
