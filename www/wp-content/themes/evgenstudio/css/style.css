@@ -26,6 +26,10 @@ h3, .h3 {
     /* or 36px */
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 /*** Анимированный background ***/
 .site-background {
     position: fixed;
@@ -82,6 +86,17 @@ h3, .h3 {
     background-color: #01B8ED;
 }
 
+.site-background-right[data-animation="main-content-second"]{
+    background-color: #01B8ED;
+}
+
+.imgList1, .imgList2, .imgList3 {
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    opacity: 0;
+}
+
 @keyframes main-content-start {
     0%{
         background-color: #01B8ED;
@@ -98,4 +113,58 @@ h3, .h3 {
     100%{
         background-color: #01B8ED;
     }
+}
+
+@keyframes main-content-second {
+    0%{
+        background-color: #2E3E43;
+    }
+    100%{
+        background-color: #01B8ED;
+    }
+}
+
+@keyframes imgList1 {
+    0%{
+        opacity: 0;
+        transform: translateY(150px) translateX(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes imgList2 {
+    0%{
+        opacity: 0;
+        transform: translateY(150px) translateX(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes imgList3 {
+    0%{
+        opacity: 0;
+        transform: translateY(150px) translateX(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+.uslugi-item .title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+}
+
+.uslugi-item span {
+    color: #7A7A7A;
 }

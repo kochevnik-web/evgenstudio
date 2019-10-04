@@ -30,11 +30,11 @@ get_header();
 						<h2>Интернет-решения для развития вашего бизнеса</h2>
 					</div>
 					<div class="col-md-7">
-						<img class="wow fadeInUp" data-wow-delay="2s" data-wow-duration="0.5s" src="<?php echo get_template_directory_uri() . '/img/main-list.png'; ?>" alt="">
+						<img class="imgList1" src="<?php echo get_template_directory_uri() . '/img/main-list.png'; ?>" alt="">
 					</div>
 				</div>
 				<div class="row main-content">
-					<div class="col-md-5">
+					<div class="col-md-5 mb-4">
 						<h3 class="mb-4">Мы</h3>
 						<p>
 						Cплоченная и опытная команда квалифицированных специалистов в области обслуживания компьютерной техники, построения и администрирования компьютерных сетей, создании и администрировании сайтов и индивидуальных интернет-решений любой сложности.
@@ -50,8 +50,141 @@ get_header();
 
 
 					</div>
-					<div class="col-md-7 align-items-center d-flex">
-						<img class="wow fadeInUp" data-wow-delay="2s" data-wow-offset="150" data-wow-duration="0.5s" src="<?php echo get_template_directory_uri() . '/img/list-2.png'; ?>" alt="">
+					<div class="col-md-7 pt-5">
+						<img class="imgList2" src="<?php echo get_template_directory_uri() . '/img/list-2.png'; ?>" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="uslugi" class="mt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h3 class="mb-4">Наши услуги</h3>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Разработка сайтов под ключ
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								IT-аутсорсинг
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						<img class="imgList3" src="<?php echo get_template_directory_uri() . '/img/list-3.png'; ?>" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="mt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h3 class="mb-4">Наши услуги</h3>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Разработка сайтов под ключ
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								IT-аутсорсинг
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="mt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<h3 class="mb-4">Наши услуги</h3>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Разработка сайтов под ключ
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								Сопровождение и управление интернет-проектами
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+						<div class="uslugi-item mb-5">
+							<div class="title mb-2">
+								IT-аутсорсинг
+							</div>
+							<div class="link">
+								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-7">
+						
 					</div>
 				</div>
 			</div>
