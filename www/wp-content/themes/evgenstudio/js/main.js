@@ -15,7 +15,7 @@ jQuery( document ).ready( function( $ ) {
     var customScroCount = 0;
     $(window).scroll(function(){
         var customScrolltop = false;
-        
+
         if (customScroCount < $(window).scrollTop() ) {
             customScrolltop = false;
             customScroCount = $(window).scrollTop();
@@ -30,16 +30,12 @@ jQuery( document ).ready( function( $ ) {
         if($(window).scrollTop() > $('.main-content').offset().top - 100){
             block.style.animationName = 'main-content-start';
             block.style.animationDuration = '1.5s';
-            setTimeout(function(){
-                block.style.backgroundColor = '#2E3E43';
-            }, 1500 );
+            block.setAttribute('data-animation', 'main-content-start');
         }
 
         if($(window).scrollTop() < $('.main-content').offset().top - 100 && customScrolltop && block.style.animationName != 'main-content-start-back') {
             block.style.animationName = 'main-content-start-back';
-            setTimeout(function(){
-                block.style.backgroundColor = '#01B8ED';
-            }, 1500 );
+            block.setAttribute('data-animation', 'main-content-start-back');
         }
     });
 

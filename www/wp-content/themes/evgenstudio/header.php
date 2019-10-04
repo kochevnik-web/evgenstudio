@@ -58,7 +58,7 @@
 
 	<div class="site-background">
 		<div class="site-background-left"></div>
-		<div class="site-background-right"></div>
+		<div class="site-background-right" data-animation=""></div>
 	</div>
 
 	<header id="masthead" class="site-header">

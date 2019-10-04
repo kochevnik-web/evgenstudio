@@ -74,9 +74,12 @@ h3, .h3 {
     background-color: #2E3E43;
 }
 
-.main-content-start-back {
-    animation-iteration-count: 1;
-    animation-direction: alternate;
+.site-background-right[data-animation="main-content-start"]{
+    background-color: #2E3E43;
+}
+
+.site-background-right[data-animation="main-content-start-back"]{
+    background-color: #01B8ED;
 }
 
 @keyframes main-content-start {
