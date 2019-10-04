@@ -50,4 +50,23 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 
+    $(document).on('click','.uslugi-item span', function(){
+        var uslugiModal = document.querySelector('.uslugi-modal-wrapper');
+        if(uslugiModal.style.opacity == 0){
+            uslugiModal.classList.add('show');
+            uslugiModal.classList.remove('hide');
+            uslugiModal.style.opacity = 1;
+        }
+        $('.uslugi-modal-content').html($(this).parent().find('.uslugi-content').html());
+    });
+
+    $(document).on('click','.close-uslugi-modal', function(){
+        var uslugiModal = document.querySelector('.uslugi-modal-wrapper');
+        if(uslugiModal.style.opacity != 0){
+            uslugiModal.classList.add('hide');
+            uslugiModal.classList.remove('show');
+            uslugiModal.style.opacity = 0;
+        }
+    });
+
 });

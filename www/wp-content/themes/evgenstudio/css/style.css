@@ -26,6 +26,15 @@ h3, .h3 {
     /* or 36px */
 }
 
+h4, .h4 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -168,3 +177,76 @@ h3, .h3 {
 .uslugi-item span {
     color: #7A7A7A;
 }
+
+.uslugi-modal {
+    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #E9F4FF;
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+    padding: 100px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 200%;
+    /* or 36px */
+}
+
+.uslugi-modal-wrapper {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.close-uslugi-modal {
+    background: none;
+    border: none;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.uslugi-modal-wrapper.show {
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-name: uslugi-modal-show;
+}
+
+.uslugi-modal-wrapper.hide {
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-name: uslugi-modal-hide;
+}
+
+@keyframes uslugi-modal-show {
+    0%{
+        opacity: 0;
+        transform: translateY(0) translateX(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}
+
+@keyframes uslugi-modal-hide{
+    0%{
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(0) translateX(150px);
+    }
+}
+
+.uslugi-modal::-webkit-scrollbar { width: 0; }

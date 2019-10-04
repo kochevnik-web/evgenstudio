@@ -68,6 +68,15 @@ get_header();
 							</div>
 							<div class="link">
 								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+								<div class="d-none uslugi-content">
+
+									<h4 class="mb-5">Сопровождение и управление интернет-проектами</h4>
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+		А может быть у вас уже есть собственный, рабочий сайт, но не хватает времени на его администрирование? Мы возьмем на себя эти обязательства.
+								</div>
 							</div>
 						</div>
 						<div class="uslugi-item mb-5">
@@ -76,6 +85,15 @@ get_header();
 							</div>
 							<div class="link">
 								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+								<div class="d-none uslugi-content">
+
+									<h4 class="mb-5">Разработка сайтов под ключ</h4>
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+		А может быть у вас уже есть собственный, рабочий сайт, но не хватает времени на его администрирование? Мы возьмем на себя эти обязательства.
+								</div>
 							</div>
 						</div>
 						<div class="uslugi-item mb-5">
@@ -84,6 +102,15 @@ get_header();
 							</div>
 							<div class="link">
 								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+								<div class="d-none uslugi-content">
+
+										<h4 class="mb-5">Сопровождение и управление интернет-проектами</h4>
+											<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+											<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+									А может быть у вас уже есть собственный, рабочий сайт, но не хватает времени на его администрирование? Мы возьмем на себя эти обязательства.
+									</div>
 							</div>
 						</div>
 						<div class="uslugi-item mb-5">
@@ -92,103 +119,33 @@ get_header();
 							</div>
 							<div class="link">
 								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
+								<div class="d-none uslugi-content">
+
+									<h4 class="mb-5">IT-аутсорсинг</h4>
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+										<p>Уже работаете с web-программистом или студией, но не хотите вникать в технические моменты разработки вашего сайта? Не проблема! Мы подготовим план развития вашего сайта и техническое задание программистам, при необходимости наймём копирайтеров и проверим их работу, подключим дизайнера и наведём «лоск» на вашем сайте.</p>
+
+								А может быть у вас уже есть собственный, рабочий сайт, но не хватает времени на его администрирование? Мы возьмем на себя эти обязательства.
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-7">
 						<img class="imgList3" src="<?php echo get_template_directory_uri() . '/img/list-3.png'; ?>" alt="">
+						<div class="uslugi-modal-wrapper">
+							<button class="close-uslugi-modal position-absolute">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/close.svg">
+							</button>
+							<div class="uslugi-modal">
+								<div class="uslugi-modal-content">
+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="mt-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<h3 class="mb-4">Наши услуги</h3>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Сопровождение и управление интернет-проектами
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Разработка сайтов под ключ
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Сопровождение и управление интернет-проектами
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								IT-аутсорсинг
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-7">
-						
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="mt-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<h3 class="mb-4">Наши услуги</h3>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Сопровождение и управление интернет-проектами
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Разработка сайтов под ключ
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								Сопровождение и управление интернет-проектами
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-						<div class="uslugi-item mb-5">
-							<div class="title mb-2">
-								IT-аутсорсинг
-							</div>
-							<div class="link">
-								<span class="cursor-pointer mr-3">Подробнее</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">
-							</div>
-						</div>
-					</div>
-					<div class="col-md-7">
-						
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<?php
 
