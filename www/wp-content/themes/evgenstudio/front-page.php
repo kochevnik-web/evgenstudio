@@ -192,6 +192,34 @@ get_header();
 								<div class="project_logo">
 									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
 								</div>
+								<div class="content_for_modal">
+									<div class="mb-3">
+										<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+									</div>
+									<div class="project_item_row_header mb-2 d-flex">
+										<div class="title">
+											S.A.Ricci PM
+										</div>
+										<div class="project_link mb-3">
+											<a href="riccipm.ru">riccipm.ru</a>
+										</div>
+									</div>
+									<div class="project_content_for_modal">
+										<p>
+										S.A.Ricci PM — строительная компания, занимается организацией, координацией и контролем работ по проектированию, строительству и внутренней отделке.
+										</p>
+										<p>
+										Главная страница простая и понятная.
+										</p>
+										<img src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
+										<p>
+										Также осуществляется дальнейшая поддержка сайта.
+										</p>
+									</div>
+									<div class="mt-3 text-center">
+										<span class="mr-4 cursor-pointer">Следующий проект</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -268,6 +296,48 @@ get_header();
 				</div>
 			</div>
 		</section>
+
+		<section id="contacts">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 contacts-left">
+						<h3 class="mb-5">Контакты</h3>
+						<div class="mb-5">
+							<span class="d-block">Вы можете оставить заявку или позвонить по номеру</span> 
+							<a href="tel:89003001214">+7 900 300-12-14</a>
+						</div>
+						<div class="mb-5">
+							<span class="d-block">E-mail</span> 
+							<a href="mailto:89003001214">supportevgenstudio.ru</a>
+						</div>
+						<div class="form_header">
+							ИП Бычков Евгений Анатольевич<br />
+							ОГРНИП 12345678900987654
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h3 class="mb-5 color-white">Оставить заявку</h3>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Modal for wrapper -->
+		<div class="wrapper_modal">
+			<div class="modal_project">
+				<div class="modal_project_wrapper">
+					<button class="close-project-modal position-absolute">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/close.svg">
+					</button>
+					<div class="modal_project_body">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #Modal for wrapper -->
+
 		<?php
 
 		endwhile; // End of the loop.

@@ -67,6 +67,13 @@ jQuery( document ).ready( function( $ ) {
             block.style.animationDuration = '1s';
             block.setAttribute('data-animation', 'main-content-object');
         }
+
+        if($(window).scrollTop() > $('#contacts').offset().top - 200){
+            ecran_3 = false;
+            block.style.animationName = 'main-content-footer';
+            block.style.animationDuration = '1s';
+            block.setAttribute('data-animation', 'main-content-footer');
+        }
     });
 
     $(document).on('click','.uslugi-item span', function(){
@@ -86,6 +93,17 @@ jQuery( document ).ready( function( $ ) {
             uslugiModal.classList.remove('show');
             uslugiModal.style.opacity = 0;
         }
+    });
+
+    $(document).on('click','.project_more', function(){
+        $('.modal_project_body').html($(this).parents().find('.content_for_modal').html());
+        $('body').addClass('overflowy-hidden');
+        $('.wrapper_modal').fadeIn(200);
+    });
+    
+    $(document).on('click','.close-project-modal', function(){
+        $('body').removeClass('overflowy-hidden');
+        $('.wrapper_modal').fadeOut(200);
     });
 
     $(document).on('click','.projects-sorting li span', function(){

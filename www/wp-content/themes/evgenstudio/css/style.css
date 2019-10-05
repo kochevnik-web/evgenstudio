@@ -39,6 +39,14 @@ h4, .h4 {
     cursor: pointer;
 }
 
+.overflowy-hidden {
+    overflow-y: hidden;
+}
+
+.color-white {
+    color: #FFFFFF;
+}
+
 /*** Анимированный background ***/
 .site-background {
     position: fixed;
@@ -103,6 +111,10 @@ h4, .h4 {
     background-color: #FFFFFF;
 }
 
+.site-background-right[data-animation="main-content-footer"]{
+    background-color: #2E3E43;
+}
+
 .imgList1, .imgList2, .imgList3 {
     animation-iteration-count: 1;
     animation-direction: alternate;
@@ -152,6 +164,15 @@ h4, .h4 {
     }
     100%{
         background-color: #FFFFFF;
+    }
+}
+
+@keyframes main-content-footer {
+    0%{
+        background-color: #FFFFFF;
+    }
+    100%{
+        background-color: #2E3E43;
     }
 }
 
@@ -342,4 +363,49 @@ h4, .h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.wrapper_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal_project {
+    max-width: 600px;
+    margin: 200px auto 0;
+    position: relative;
+    background: #ffffff;
+    padding: 40px;
+}
+
+.close-project-modal {
+    background: transparent;
+    border: none;
+    top: 40px;
+    right: 40px;
+}
+
+.content_for_modal {
+    display: none;
+}
+
+#contacts {
+    margin-top: 60px;
+    padding: 300px 0;
+}
+
+.form_header {
+    color: #AFAFAF;
+}
+
+.contacts-left a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 200%;
 }
