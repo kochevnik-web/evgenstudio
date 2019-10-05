@@ -156,13 +156,13 @@ get_header();
 					</div>
 					<div class="col-12">
 						<ul class="projects-sorting list-unstyled m-0">
-							<li><span class="mr-3 cursor-pointer active">Все</span></li>
-							<li><span class="mr-3 cursor-pointer">Сайты</span></li>
-							<li><span class="mr-3 cursor-pointer">IT Аутсортинг</span></li>
+							<li><span class="mr-3 cursor-pointer active" data-sort="all">Все</span></li>
+							<li><span class="mr-3 cursor-pointer" data-sort="saity">Сайты</span></li>
+							<li><span class="mr-3 cursor-pointer" data-sort="autsorting">IT Аутсортинг</span></li>
 						</ul>
 					</div>
 				</div>
-				<div class="project_item mb-5">
+				<div class="project_item mb-5" data-sort="all+saity+">
 					<div class="row">
 						<div class="col-md-6">
 							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
@@ -197,7 +197,7 @@ get_header();
 					</div>
 				</div>
 
-				<div class="project_item mb-5">
+				<div class="project_item mb-5" data-sort="all+saity+autsorting+">
 					<div class="row">
 						<div class="col-md-6">
 							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
@@ -232,7 +232,7 @@ get_header();
 					</div>
 				</div>
 
-				<div class="project_item mb-5">
+				<div class="project_item mb-5" data-sort="all+autsorting+">
 					<div class="row">
 						<div class="col-md-6">
 							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">

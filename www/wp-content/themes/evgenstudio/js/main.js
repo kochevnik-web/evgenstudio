@@ -88,4 +88,19 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 
+    $(document).on('click','.projects-sorting li span', function(){
+        $('.projects-sorting li span').removeClass('active');
+        $(this).addClass('active');
+        var srt = $(this).data('sort');
+        $('.project_item').each(function (index, value) { 
+            if($(this).data('sort').includes(srt + '+')){
+                $(this).addClass('d-block');
+                $(this).removeClass('d-none');
+            } else {
+                $(this).addClass('d-none');
+                $(this).removeClass('d-block');
+            }
+        });
+    });
+
 });
