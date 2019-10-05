@@ -13,6 +13,8 @@ jQuery( document ).ready( function( $ ) {
         imgList1.style.opacity = 1;
     }, 1700);
 
+    var ecran_3 = false;
+
     var customScroCount = 0;
     $(window).scroll(function(){
         var customScrolltop = false;
@@ -34,6 +36,7 @@ jQuery( document ).ready( function( $ ) {
             block.setAttribute('data-animation', 'main-content-start');
             imgList2.style.animationName = 'imgList2';
             imgList2.style.opacity = 1;
+            ecran_3 = false;
         }
 
         if($(window).scrollTop() < $('.main-content').offset().top - 100 && customScrolltop && block.style.animationName != 'main-content-start-back') {
@@ -41,12 +44,28 @@ jQuery( document ).ready( function( $ ) {
             block.setAttribute('data-animation', 'main-content-start-back');
         }
 
-        if($(window).scrollTop() > $('#uslugi').offset().top - 200){
-            block.style.animationName = 'main-content-second';
+        if($(window).scrollTop() > $('#uslugi').offset().top - 200 && $(window).scrollTop() <= $('#projects').offset().top - 400){
+            if(!ecran_3){
+                if(customScrolltop){
+                    block.style.animationName = 'main-content-second-top';
+                    ecran_3 = true;
+                } else {
+                    block.style.animationName = 'main-content-second';
+                    ecran_3 = true;
+                }
+            }
+            
             block.style.animationDuration = '1s';
             block.setAttribute('data-animation', 'main-content-second');
             imgList3.style.animationName = 'imgList3';
             imgList3.style.opacity = 1;
+        }
+
+        if($(window).scrollTop() > $('#projects').offset().top - 400){
+            ecran_3 = false;
+            block.style.animationName = 'main-content-object';
+            block.style.animationDuration = '1s';
+            block.setAttribute('data-animation', 'main-content-object');
         }
     });
 

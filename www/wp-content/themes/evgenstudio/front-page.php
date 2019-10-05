@@ -150,16 +150,120 @@ get_header();
 
 		<section id="projects">
 			<div class="container">
-				<div class="row">
+				<div class="row mb-5">
 					<div class="col-12">
 						<h3>Реализованные проекты</h3>
 					</div>
 					<div class="col-12">
 						<ul class="projects-sorting list-unstyled m-0">
-							<li><span class="mr-3 cursor-pointer">Все</span></li>
+							<li><span class="mr-3 cursor-pointer active">Все</span></li>
 							<li><span class="mr-3 cursor-pointer">Сайты</span></li>
 							<li><span class="mr-3 cursor-pointer">IT Аутсортинг</span></li>
 						</ul>
+					</div>
+				</div>
+				<div class="project_item mb-5">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
+						</div>
+						<div class="col-md-6 project-content">
+							<div class="project_item_row_header mb-2 d-flex">
+								<div class="title">
+								S.A.Ricci PM
+								</div>
+								<div class="project_link">
+									<a href="riccipm.ru">riccipm.ru</a>
+								</div>
+							</div>
+							<div class="project_item_row mb-4">
+								<div class="project_cat">
+									Сайт + Поддержка
+								</div>
+								<div class="project_desc mb-4">
+								Разработка сайта компании и его дальнейшая поддержка
+								</div>
+							</div>
+							<div class="project_item_row_footer">
+								<span class="project_more cursor-pointer">
+									Подробнее
+									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
+								</span>
+								<div class="project_logo">
+									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="project_item mb-5">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
+						</div>
+						<div class="col-md-6 project-content">
+							<div class="project_item_row_header mb-2 d-flex">
+								<div class="title">
+								S.A.Ricci PM
+								</div>
+								<div class="project_link">
+									<a href="riccipm.ru">riccipm.ru</a>
+								</div>
+							</div>
+							<div class="project_item_row mb-4">
+								<div class="project_cat">
+									Сайт + Поддержка
+								</div>
+								<div class="project_desc mb-4">
+								Разработка сайта компании и его дальнейшая поддержка
+								</div>
+							</div>
+							<div class="project_item_row_footer">
+								<span class="project_more cursor-pointer">
+									Подробнее
+									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
+								</span>
+								<div class="project_logo">
+									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="project_item mb-5">
+					<div class="row">
+						<div class="col-md-6">
+							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
+						</div>
+						<div class="col-md-6 project-content">
+							<div class="project_item_row_header mb-2 d-flex">
+								<div class="title">
+								S.A.Ricci PM
+								</div>
+								<div class="project_link">
+									<a href="riccipm.ru">riccipm.ru</a>
+								</div>
+							</div>
+							<div class="project_item_row mb-4">
+								<div class="project_cat">
+									Сайт + Поддержка
+								</div>
+								<div class="project_desc mb-4">
+								Разработка сайта компании и его дальнейшая поддержка
+								</div>
+							</div>
+							<div class="project_item_row_footer">
+								<span class="project_more cursor-pointer">
+									Подробнее
+									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
+								</span>
+								<div class="project_logo">
+									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
