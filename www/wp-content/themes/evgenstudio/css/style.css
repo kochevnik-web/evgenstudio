@@ -39,6 +39,19 @@ h4, .h4 {
     cursor: pointer;
 }
 
+.btn-primary {
+    background: #DDE3E9;
+    color: #000000;
+    border: 1px solid #DDE3E9;
+
+}
+.btn-primary:hover {
+    background: #DDE3E9;
+    color: #000000;
+    border: 1px solid #DDE3E9;
+    opacity: .7;
+}
+
 .overflowy-hidden {
     overflow-y: hidden;
 }
@@ -209,8 +222,13 @@ h4, .h4 {
     }
 }
 
+#content {
+    margin-top: 150px;
+}
+
 #uslugi {
     margin-bottom: 150px;
+    margin-top: 150px;
 }
 
 .uslugi-item .title {
@@ -373,6 +391,7 @@ h4, .h4 {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: none;
+    z-index: 101;
 }
 
 .modal_project {
@@ -408,4 +427,61 @@ h4, .h4 {
     font-weight: 500;
     font-size: 18px;
     line-height: 200%;
+}
+
+.header {
+    width: 100%;
+    z-index: 100;
+}
+
+.block-menu {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #ffffff;
+}
+
+.menu {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #7A7A7A;
+}
+
+.menu ul li {
+    float: left;
+}
+
+.menu ul li a {
+    color: #7A7A7A;
+}
+
+.menu ul li a:hover {
+    color: #7A7A7A;
+    text-decoration: none;
+}
+
+.menu ul li a.active{
+    color: #000000;
+}
+
+.top_button {
+    top: 45px;
+    right: 80px;
+}
+
+.top_button a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    padding: 10px 15px;
+}
+
+.main-logo {
+    top: 45px;
+    left: 80px;
 }

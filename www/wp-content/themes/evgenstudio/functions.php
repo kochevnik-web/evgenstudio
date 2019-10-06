@@ -74,8 +74,8 @@ if ( ! function_exists( 'evgenstudio_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 34,
+			'width'       => 138,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -167,4 +167,58 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+	//Регистрация нового типа записи
+	function registr_kreditka() {
+		register_post_type( 'project', array(
+			'labels'             => array(
+				'name'               => 'Проекты',
+				'singular_name'      => 'Проект',
+				'add_new'            => 'Добавить проект',
+				'add_new_item'       => 'Добавить новый проект',
+				'edit_item'          => 'Редактировать проект',
+				'new_item'           => 'Новый проект',
+				'view_item'          => 'Посмотреть проект',
+				'search_items'       => 'Найти проект',
+				'not_found'          => 'Проектов не найдено',
+				'not_found_in_trash' => 'В корзине проектов не найдено',
+				'parent_item_colon'  => '',
+				'menu_name'          => 'Проекты'
+
+			),
+			'public'             => true,
+			'has_archive'        => true,
+			'taxonomies'         => array( 'project_cat' ),
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'comments' )
+		) );
+	}
+
+	//Регистарция таксономии для типа записи кредитные карты
+	function registr_cat_kreditka() {
+		register_taxonomy( 'project_cat', array( 'project' ), array(
+			'label'                 => '',
+			'labels'                => array(
+				'name'              => 'Категории проектов',
+				'singular_name'     => 'Категория',
+				'search_items'      => 'Искать категории проектов',
+				'all_items'         => 'Все категории',
+				'parent_item'       => 'Родительская категория',
+				'parent_item_colon' => 'Родительская категория:',
+				'edit_item'         => 'Редактировать категорию проектов',
+				'update_item'       => 'Обновить категорию проектов',
+				'add_new_item'      => 'Добавить категорию проектов',
+				'new_item_name'     => 'Новая категория проектов',
+				'menu_name'         => 'Категории',
+			),
+			'description'           => '',
+			'public'                => true,
+			'hierarchical'          => true,
+			'meta_box_cb'           => 'post_categories_meta_box',
+			'rewrite'               => array( 'slug' => 'project_cat' ),
+		) );
+	}
+
+	add_action( 'init', 'registr_kreditka' );
+	add_action( 'init', 'registr_cat_kreditka' );
+
 

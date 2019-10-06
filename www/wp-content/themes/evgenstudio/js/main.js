@@ -121,4 +121,23 @@ jQuery( document ).ready( function( $ ) {
         });
     });
 
+
+    //Скрол главного меню
+    let scrollDataMenu = 0;
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() >= $('.header').offset().top && $(window).width() >= 768 && scrollDataMenu == 0 ) {
+            console.log($(window).scrollTop());
+            console.log($('.header').offset().top);
+            $('.header').addClass('position-fixed');
+            scrollDataMenu = $('.header').offset().top;
+        }
+
+        if ($(window).scrollTop() < scrollDataMenu){
+            $('header').removeClass('position-fixed');
+            scrollDataMenu = 0;
+        }
+
+    });
+
+
 });

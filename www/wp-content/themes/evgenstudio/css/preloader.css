@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 101;
 }
 
 .path1, .path2, .path3, .path4, .path5, .path6, .path7, .path8, .path9 {

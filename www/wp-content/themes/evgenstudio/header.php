@@ -9,6 +9,8 @@
  * @package evgenstudio
  */
 
+	global $post;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -62,7 +64,32 @@
 	</div>
 
 	<header id="masthead" class="site-header">
-
+		<div class="header position-fixed">
+			<div class="main-logo position-absolute">
+				<?php echo get_custom_logo(); ?>
+			</div>
+			<?php if ( (bool)get_post_meta( $post->ID, 'show_button', true ) && (bool)get_post_meta( $post->ID, 'text_button', true ) ) { ?>
+			<div class="top_button position-absolute">
+				<a href="#contacts" class="btn btn-primary"><?php echo get_post_meta( $post->ID, 'text_button', true ); ?></a>
+			</div>
+			<?php } ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 block-menu">
+						<?php $count_menu = get_post_meta( $post->ID, 'menu', true ); ?>
+						<?php if ( $count_menu > 0 ) { ?>
+						<div class="menu">
+							<ul class="list-unstyled m-0 overflow-hidden">
+								<?php for( $i = 0; $i < $count_menu; $i++ ) { ?>
+								<li class="mr-3"><a href="<?php echo get_post_meta( $post->ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $post->ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
+								<?php } ?>
+							</ul>
+						</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
