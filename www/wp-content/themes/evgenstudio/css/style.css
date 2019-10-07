@@ -180,6 +180,15 @@ h4, .h4 {
     }
 }
 
+@keyframes main-content-object-top {
+    0%{
+        background-color: #2E3E43;
+    }
+    100%{
+        background-color: #FFFFFF;
+    }
+}
+
 @keyframes main-content-footer {
     0%{
         background-color: #FFFFFF;

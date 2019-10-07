@@ -200,22 +200,33 @@ get_header();
 				<div class="row">
 					<div class="col-md-6 contacts-left">
 						<h3 class="mb-5">Контакты</h3>
+						<?php if ( (bool)get_post_meta( $post->ID, 'phone', true ) ) { ?>
 						<div class="mb-5">
 							<span class="d-block">Вы можете оставить заявку или позвонить по номеру</span> 
-							<a href="tel:89003001214">+7 900 300-12-14</a>
+							<a href="tel:<?php echo str_replace( '+7', '8', str_replace( array( '-', ' ', '(', ')' ), '', get_post_meta( $post->ID, 'phone', true ) ) ); ?>"><?php echo get_post_meta( $post->ID, 'phone', true ); ?></a>
 						</div>
+						<?php } ?>
+
+						<?php if ( (bool)get_post_meta( $post->ID, 'email', true ) ) { ?>
 						<div class="mb-5">
 							<span class="d-block">E-mail</span> 
-							<a href="mailto:89003001214">supportevgenstudio.ru</a>
+							<a href="mailto:<?php echo get_post_meta( $post->ID, 'email', true ); ?>"><?php echo get_post_meta( $post->ID, 'email', true ); ?></a>
 						</div>
+						<?php } ?>
+
+						<?php if ( (bool)get_post_meta( $post->ID, 'ip_text', true ) ) { ?>
 						<div class="form_header">
-							ИП Бычков Евгений Анатольевич<br />
-							ОГРНИП 12345678900987654
+							<?php echo get_post_meta( $post->ID, 'ip_text', true ); ?>
 						</div>
+						<?php } ?>
 					</div>
 					<div class="col-md-6">
 						<h3 class="mb-5 color-white">Оставить заявку</h3>
-
+						<?php if ( (bool)get_post_meta( $post->ID, 'cf7', true ) ) { ?>
+							<div class="contact_form">
+								<?php echo do_shortcode( get_post_meta( $post->ID, 'cf7', true ) ); ?>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>

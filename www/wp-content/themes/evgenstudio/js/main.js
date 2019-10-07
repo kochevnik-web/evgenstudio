@@ -14,6 +14,7 @@ jQuery( document ).ready( function( $ ) {
     }, 1700);
 
     var ecran_3 = false;
+    var ecran_4 = false;
 
     var customScroCount = 0;
     $(window).scroll(function(){
@@ -37,6 +38,7 @@ jQuery( document ).ready( function( $ ) {
             imgList2.style.animationName = 'imgList2';
             imgList2.style.opacity = 1;
             ecran_3 = false;
+            ecran_4 = false;
         }
 
         if($(window).scrollTop() < $('.main-content').offset().top - 100 && customScrolltop && block.style.animationName != 'main-content-start-back') {
@@ -59,17 +61,27 @@ jQuery( document ).ready( function( $ ) {
             block.setAttribute('data-animation', 'main-content-second');
             imgList3.style.animationName = 'imgList3';
             imgList3.style.opacity = 1;
+            ecran_4 = false;
         }
 
-        if($(window).scrollTop() > $('#projects').offset().top - 400){
+        if($(window).scrollTop() > $('#projects').offset().top - 400 && $(window).scrollTop() <= $('#contacts').offset().top - 200){
             ecran_3 = false;
-            block.style.animationName = 'main-content-object';
+            if(!ecran_4){
+                if(customScrolltop){
+                    block.style.animationName = 'main-content-object-top';
+                    ecran_4 = true;
+                } else {
+                    block.style.animationName = 'main-content-object';
+                    ecran_4 = true;
+                }
+            }
             block.style.animationDuration = '1s';
             block.setAttribute('data-animation', 'main-content-object');
         }
 
         if($(window).scrollTop() > $('#contacts').offset().top - 200){
             ecran_3 = false;
+            ecran_4 = false;
             block.style.animationName = 'main-content-footer';
             block.style.animationDuration = '1s';
             block.setAttribute('data-animation', 'main-content-footer');
