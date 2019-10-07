@@ -54,7 +54,7 @@ jQuery( document ).ready( function( $ ) {
                     ecran_3 = true;
                 }
             }
-            
+
             block.style.animationDuration = '1s';
             block.setAttribute('data-animation', 'main-content-second');
             imgList3.style.animationName = 'imgList3';
@@ -96,11 +96,11 @@ jQuery( document ).ready( function( $ ) {
     });
 
     $(document).on('click','.project_more', function(){
-        $('.modal_project_body').html($(this).parents().find('.content_for_modal').html());
+        $('.modal_project_body').html($(this).parent().find('.content_for_modal').html());
         $('body').addClass('overflowy-hidden');
         $('.wrapper_modal').fadeIn(200);
     });
-    
+
     $(document).on('click','.close-project-modal', function(){
         $('body').removeClass('overflowy-hidden');
         $('.wrapper_modal').fadeOut(200);
@@ -110,7 +110,7 @@ jQuery( document ).ready( function( $ ) {
         $('.projects-sorting li span').removeClass('active');
         $(this).addClass('active');
         var srt = $(this).data('sort');
-        $('.project_item').each(function (index, value) { 
+        $('.project_item').each(function (index, value) {
             if($(this).data('sort').includes(srt + '+')){
                 $(this).addClass('d-block');
                 $(this).removeClass('d-none');

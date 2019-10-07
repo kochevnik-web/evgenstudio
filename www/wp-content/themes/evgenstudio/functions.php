@@ -41,6 +41,7 @@ if ( ! function_exists( 'evgenstudio_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'kreditka-thumb', 540, 237, false );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(

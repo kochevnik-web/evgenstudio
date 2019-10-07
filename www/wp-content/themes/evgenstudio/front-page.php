@@ -70,7 +70,7 @@ get_header();
 
 							<?php } ?>
 						<?php } ?>
-						
+
 					</div>
 					<div class="col-md-7">
 						<img class="imgList3" src="<?php echo get_template_directory_uri() . '/img/list-3.png'; ?>" alt="">
@@ -89,40 +89,73 @@ get_header();
 			</div>
 		</section>
 
+		<?php $projects = get_post_meta( $post->ID, 'projects', true ); ?>
+		<?php if( (bool)$projects && $projects > 0 ) { ?>
+		<?php
+
+		$arr = array();
+		$arr_cat = array();
+
+		for ( $p = 0; $p < $projects; $p++ ){
+			$arr[] = get_post( get_post_meta( $post->ID, 'projects_' . $p . '_single_project', true ), OBJECT );
+			$post_cat = get_the_terms( get_post_meta( $post->ID, 'projects_' . $p . '_single_project', true ), 'project_cat' );
+			foreach ( $post_cat as $value_cat ) {
+				if ( !array_key_exists( $value_cat->slug, $arr_cat ) ) {
+					$arr_cat[$value_cat->slug] = $value_cat->name;
+				}
+			}
+		}
+
+		?>
 		<section id="projects">
 			<div class="container">
 				<div class="row mb-5">
 					<div class="col-12">
 						<h3>Реализованные проекты</h3>
 					</div>
+					<?php if( count( $arr_cat ) > 0 ) { ?>
 					<div class="col-12">
 						<ul class="projects-sorting list-unstyled m-0">
-							<li><span class="mr-3 cursor-pointer active" data-sort="all">Все</span></li>
-							<li><span class="mr-3 cursor-pointer" data-sort="saity">Сайты</span></li>
-							<li><span class="mr-3 cursor-pointer" data-sort="autsorting">IT Аутсортинг</span></li>
+						<li><span class="mr-3 cursor-pointer active" data-sort="all">Все</span></li>
+							<?php foreach ( $arr_cat as $key_arr_cat => $value_arr_cat ) { ?>
+							<li><span class="mr-3 cursor-pointer" data-sort="<?php echo $key_arr_cat; ?>"><?php echo $value_arr_cat; ?></span></li>
+							<?php } ?>
 						</ul>
 					</div>
+					<?php } ?>
 				</div>
-				<div class="project_item mb-5" data-sort="all+saity+">
+
+				<?php foreach ( $arr as $post_pro ) { ?>
+				<?php
+					$post_pro_cat = get_the_terms( $post_pro->ID, 'project_cat' );
+					$data_sort = 'all+';
+					$terms_pro = '';
+					foreach ( $post_pro_cat as $value_post_pro_cat ) {
+						$data_sort .= $value_post_pro_cat->slug . '+';
+						$terms_pro .= $value_post_pro_cat->name . ' + ';
+					}
+					$terms_pro = trim( $terms_pro, '+ ' );
+				?>
+				<div class="project_item mb-5" data-sort="<?php echo $data_sort; ?>">
 					<div class="row">
 						<div class="col-md-6">
-							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
+							<img class="project_item_img" src="<?php echo get_the_post_thumbnail_url( $post_pro->ID, 'kreditka-thumb' )?>" alt="<?php echo $post_pro->post_title ?>">
 						</div>
 						<div class="col-md-6 project-content">
 							<div class="project_item_row_header mb-2 d-flex">
 								<div class="title">
-								S.A.Ricci PM
+								<?php echo $post_pro->post_title ?>
 								</div>
 								<div class="project_link">
-									<a href="riccipm.ru">riccipm.ru</a>
+									<a href="<?php echo get_post_meta( $post_pro->ID, 'link', true ); ?>"><?php echo get_post_meta( $post_pro->ID, 'text_link', true ); ?></a>
 								</div>
 							</div>
 							<div class="project_item_row mb-4">
-								<div class="project_cat">
-									Сайт + Поддержка
+								<div class="project_cat mb-3">
+									<?php echo $terms_pro; ?>
 								</div>
 								<div class="project_desc mb-4">
-								Разработка сайта компании и его дальнейшая поддержка
+									<?php echo get_post_meta( $post_pro->ID, 'desc', true ); ?>
 								</div>
 							</div>
 							<div class="project_item_row_footer">
@@ -131,31 +164,22 @@ get_header();
 									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
 								</span>
 								<div class="project_logo">
-									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+									<img src="<?php  echo wp_get_attachment_image_url( get_post_meta( $post_pro->ID, 'logo', true ), 'full' ); ?>" >
 								</div>
 								<div class="content_for_modal">
 									<div class="mb-3">
-										<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
+										<img src="<?php  echo wp_get_attachment_image_url( get_post_meta( $post_pro->ID, 'logo', true ), 'full' ); ?>" >
 									</div>
 									<div class="project_item_row_header mb-2 d-flex">
 										<div class="title">
-											S.A.Ricci PM
+											<?php echo $post_pro->post_title ?>
 										</div>
 										<div class="project_link mb-3">
-											<a href="riccipm.ru">riccipm.ru</a>
+											<a href="<?php echo get_post_meta( $post_pro->ID, 'link', true ); ?>"><?php echo get_post_meta( $post_pro->ID, 'text_link', true ); ?></a>
 										</div>
 									</div>
 									<div class="project_content_for_modal">
-										<p>
-										S.A.Ricci PM — строительная компания, занимается организацией, координацией и контролем работ по проектированию, строительству и внутренней отделке.
-										</p>
-										<p>
-										Главная страница простая и понятная.
-										</p>
-										<img src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
-										<p>
-										Также осуществляется дальнейшая поддержка сайта.
-										</p>
+										<?php echo $post_pro->post_content; ?>
 									</div>
 									<div class="mt-3 text-center">
 										<span class="mr-4 cursor-pointer">Следующий проект</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
@@ -166,77 +190,10 @@ get_header();
 					</div>
 				</div>
 
-				<div class="project_item mb-5" data-sort="all+saity+autsorting+">
-					<div class="row">
-						<div class="col-md-6">
-							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
-						</div>
-						<div class="col-md-6 project-content">
-							<div class="project_item_row_header mb-2 d-flex">
-								<div class="title">
-								S.A.Ricci PM
-								</div>
-								<div class="project_link">
-									<a href="riccipm.ru">riccipm.ru</a>
-								</div>
-							</div>
-							<div class="project_item_row mb-4">
-								<div class="project_cat">
-									Сайт + Поддержка
-								</div>
-								<div class="project_desc mb-4">
-								Разработка сайта компании и его дальнейшая поддержка
-								</div>
-							</div>
-							<div class="project_item_row_footer">
-								<span class="project_more cursor-pointer">
-									Подробнее
-									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
-								</span>
-								<div class="project_logo">
-									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="project_item mb-5" data-sort="all+autsorting+">
-					<div class="row">
-						<div class="col-md-6">
-							<img class="project_item_img" src="<?php echo get_template_directory_uri() . '/img/project.png'; ?>" alt="">
-						</div>
-						<div class="col-md-6 project-content">
-							<div class="project_item_row_header mb-2 d-flex">
-								<div class="title">
-								S.A.Ricci PM
-								</div>
-								<div class="project_link">
-									<a href="riccipm.ru">riccipm.ru</a>
-								</div>
-							</div>
-							<div class="project_item_row mb-4">
-								<div class="project_cat">
-									Сайт + Поддержка
-								</div>
-								<div class="project_desc mb-4">
-								Разработка сайта компании и его дальнейшая поддержка
-								</div>
-							</div>
-							<div class="project_item_row_footer">
-								<span class="project_more cursor-pointer">
-									Подробнее
-									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
-								</span>
-								<div class="project_logo">
-									<img src="<?php echo get_template_directory_uri() . '/img/project_logo.png'; ?>" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</section>
+		<?php } ?>
 
 		<section id="contacts">
 			<div class="container">
