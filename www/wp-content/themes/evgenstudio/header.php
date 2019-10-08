@@ -58,10 +58,14 @@
 
 <div id="page" class="site">
 
+	<?php if ( is_front_page() ) { ?>
+
 	<div class="site-background">
 		<div class="site-background-left"></div>
 		<div class="site-background-right" data-animation=""></div>
 	</div>
+
+	<?php } ?>
 
 	<header id="masthead" class="site-header">
 		<div class="header position-fixed">

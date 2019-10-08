@@ -107,12 +107,6 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 
-    $(document).on('click','.project_more', function(){
-        $('.modal_project_body').html($(this).parent().find('.content_for_modal').html());
-        $('body').addClass('overflowy-hidden');
-        $('.wrapper_modal').fadeIn(200);
-    });
-
     $(document).on('click','.close-project-modal', function(){
         $('body').removeClass('overflowy-hidden');
         $('.wrapper_modal').fadeOut(200);
@@ -149,6 +143,15 @@ jQuery( document ).ready( function( $ ) {
             scrollDataMenu = 0;
         }
 
+    });
+
+    $('a[href^="#"]').click( function(){
+        var scroll_el = $(this).attr('href');
+        var destination = $(scroll_el).offset().top;
+        if ($(scroll_el).length != 0) {
+            $('html, body').animate( { scrollTop: destination }, 1100 );
+        }
+        return false;
     });
 
 

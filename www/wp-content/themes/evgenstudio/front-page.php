@@ -159,31 +159,12 @@ get_header();
 								</div>
 							</div>
 							<div class="project_item_row_footer">
-								<span class="project_more cursor-pointer">
+								<a class="project_more cursor-pointer" href="<?php echo get_permalink( $post_pro->ID ); ?>">
 									Подробнее
 									<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
-								</span>
+								</a>
 								<div class="project_logo">
 									<img src="<?php  echo wp_get_attachment_image_url( get_post_meta( $post_pro->ID, 'logo', true ), 'full' ); ?>" >
-								</div>
-								<div class="content_for_modal">
-									<div class="mb-3">
-										<img src="<?php  echo wp_get_attachment_image_url( get_post_meta( $post_pro->ID, 'logo', true ), 'full' ); ?>" >
-									</div>
-									<div class="project_item_row_header mb-2 d-flex">
-										<div class="title">
-											<?php echo $post_pro->post_title ?>
-										</div>
-										<div class="project_link mb-3">
-											<a href="<?php echo get_post_meta( $post_pro->ID, 'link', true ); ?>"><?php echo get_post_meta( $post_pro->ID, 'text_link', true ); ?></a>
-										</div>
-									</div>
-									<div class="project_content_for_modal">
-										<?php echo $post_pro->post_content; ?>
-									</div>
-									<div class="mt-3 text-center">
-										<span class="mr-4 cursor-pointer">Следующий проект</span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
-									</div>
 								</div>
 							</div>
 						</div>
@@ -220,7 +201,7 @@ get_header();
 						</div>
 						<?php } ?>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-5 offset-md-1">
 						<h3 class="mb-5 color-white">Оставить заявку</h3>
 						<?php if ( (bool)get_post_meta( $post->ID, 'cf7', true ) ) { ?>
 							<div class="contact_form">
@@ -231,21 +212,6 @@ get_header();
 				</div>
 			</div>
 		</section>
-
-		<!-- Modal for wrapper -->
-		<div class="wrapper_modal">
-			<div class="modal_project">
-				<div class="modal_project_wrapper">
-					<button class="close-project-modal position-absolute">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/close.svg">
-					</button>
-					<div class="modal_project_body">
-
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- #Modal for wrapper -->
 
 		<?php
 
