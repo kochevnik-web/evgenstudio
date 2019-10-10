@@ -72,20 +72,21 @@
 			<div class="main-logo position-absolute">
 				<?php echo get_custom_logo(); ?>
 			</div>
-			<?php if ( (bool)get_post_meta( $post->ID, 'show_button', true ) && (bool)get_post_meta( $post->ID, 'text_button', true ) ) { ?>
+			<?php $home_page_ID = get_option( 'page_on_front' ); ?>
+			<?php if ( (bool)get_post_meta( $home_page_ID, 'show_button', true ) && (bool)get_post_meta( $home_page_ID, 'text_button', true ) ) { ?>
 			<div class="top_button position-absolute">
-				<a href="#contacts" class="btn btn-primary"><?php echo get_post_meta( $post->ID, 'text_button', true ); ?></a>
+				<a href="/#contacts" class="btn btn-primary"><?php echo get_post_meta( $home_page_ID, 'text_button', true ); ?></a>
 			</div>
 			<?php } ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 block-menu">
-						<?php $count_menu = get_post_meta( $post->ID, 'menu', true ); ?>
+						<?php $count_menu = get_post_meta( $home_page_ID, 'menu', true ); ?>
 						<?php if ( $count_menu > 0 ) { ?>
 						<div class="menu">
 							<ul class="list-unstyled m-0 overflow-hidden">
 								<?php for( $i = 0; $i < $count_menu; $i++ ) { ?>
-								<li class="mr-3"><a href="<?php echo get_post_meta( $post->ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $post->ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
+								<li class="mr-3"><a href="<?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
 								<?php } ?>
 							</ul>
 						</div>

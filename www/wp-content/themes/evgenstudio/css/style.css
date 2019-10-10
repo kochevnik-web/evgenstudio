@@ -9,6 +9,15 @@ body {
     /* or 24px */
 }
 
+h1, .h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+}
+
 h2, .h2 {
     font-family: Montserrat;
     font-style: normal;
@@ -388,6 +397,10 @@ h4, .h4 {
     color: #7A7A7A;
 }
 
+.project_more:visited {
+    color: #7A7A7A;
+}
+
 .project_item_row_footer {
     display: flex;
     align-items: flex-end;
@@ -512,4 +525,10 @@ h4, .h4 {
     padding: 10px;
     color: #757575;
     height: 100px;
+}
+
+.single-project-offer {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
 }
