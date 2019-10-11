@@ -48,7 +48,24 @@ get_header();
 								<img src="<?php  echo wp_get_attachment_image_url( get_post_meta( $post->ID, 'logo', true ), 'full' ); ?>" >
 							</div>
 						</div>
-						<?php the_content(); ?>
+
+						<div class="the_content mb-5">
+							<?php the_content(); ?>
+						</div>
+
+						<?php if ( (bool)get_post_meta( $post->ID, 'link', true ) || (bool)get_post_meta( $post->ID, 'text_link', true ) ) { ?>
+						<div class="single-project-footer-link text-center mb-3">
+							<a href="<?php echo get_post_meta( $post->ID, 'link', true ); ?>"><?php echo get_post_meta( $post->ID, 'text_link', true ); ?></a>
+						</div>
+						<?php } ?>
+
+						<div class="nex-post text-center">
+							<?php $next_post =  get_adjacent_post( false, '', false, 'project_cat' ); ?>
+							<?php if ( $next_post->ID > 0 ) { ?>
+								<a href="<?php echo get_permalink( $next_post->ID ); ?>">Следующий проект</a>
+								<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
+							<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>

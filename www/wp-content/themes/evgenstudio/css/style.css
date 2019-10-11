@@ -532,3 +532,32 @@ h4, .h4 {
     font-size: 14px;
     line-height: 20px;
 }
+
+.single-project-footer-link a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0096FF;
+}
+
+.nex-post a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #7A7A7A;
+}
+
+.nex-post a:hover {
+    text-decoration: none;
+    opacity: .8;
+}
+
+.project-template-default .header {
+    background: #FFFFFF;
+}
+
+.project-template-default footer {
+    min-height: 200px;
+}
