@@ -125,6 +125,7 @@ function evgenstudio_scripts() {
 
 	wp_enqueue_style( 'preloader-style', get_template_directory_uri() . '/css/preloader.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'hamburgers', get_template_directory_uri() . '/css/hamburgers.min.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all' );
 

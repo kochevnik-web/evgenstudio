@@ -11,6 +11,8 @@
 
 	global $post;
 
+	$prex = !is_front_page() ? '/' : '';
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -56,37 +58,63 @@
 		</svg>
 	</div>
 
-<div id="page" class="site">
+<div id="page" class="site position-relative">
 
 	<?php if ( is_front_page() ) { ?>
 
-	<div class="site-background">
+	<div class="site-background d-none d-md-block">
 		<div class="site-background-left"></div>
 		<div class="site-background-right" data-animation=""></div>
 	</div>
 
 	<?php } ?>
 
+	<?php $home_page_ID = get_option( 'page_on_front' ); ?>
+	<?php $count_menu   = get_post_meta( $home_page_ID, 'menu', true ); ?>
+	<?php if ( $count_menu > 0 ) { ?>
+	<div class="menu-mobile position-fixed">
+		<ul class="list-unstyled m-0 overflow-hidden text-center pt-5">
+			<?php for( $i = 0; $i < $count_menu; $i++ ) { ?>
+			<li class="mb-4"><a href="<?php echo $prex . get_post_meta( $home_page_ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
+			<?php } ?>
+			<li class="contact_more">
+				<a href="<?= $prex; ?>#contact-form">Оставить заявку</a>
+			</li>
+		</ul>
+	</div>
+	<?php } ?>
+
+
+
 	<header id="masthead" class="site-header">
 		<div class="header position-fixed">
 			<div class="main-logo position-absolute">
 				<?php echo get_custom_logo(); ?>
 			</div>
-			<?php $home_page_ID = get_option( 'page_on_front' ); ?>
 			<?php if ( (bool)get_post_meta( $home_page_ID, 'show_button', true ) && (bool)get_post_meta( $home_page_ID, 'text_button', true ) ) { ?>
-			<div class="top_button position-absolute">
-				<a href="/#contacts" class="btn btn-primary"><?php echo get_post_meta( $home_page_ID, 'text_button', true ); ?></a>
+			<div class="top_button position-absolute d-none d-lg-block">
+				<a href="<?= $prex; ?>#contacts" class="btn btn-primary"><?php echo get_post_meta( $home_page_ID, 'text_button', true ); ?></a>
+			</div>
+			<div class="hamburger-menu position-absolute d-lg-none d-block">
+				<a href="<?= $prex; ?>#contact-form" class="contact-message cursor-pointer display-block">
+					<img src="<?php echo get_template_directory_uri() . '/img/message.svg'; ?>" alt="">
+				</a>
+				<div class="hamburger hamburger--spin">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
 			</div>
 			<?php } ?>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 block-menu">
+					<div class="col-md-6 block-menu d-none d-lg-block">
 						<?php $count_menu = get_post_meta( $home_page_ID, 'menu', true ); ?>
 						<?php if ( $count_menu > 0 ) { ?>
 						<div class="menu">
 							<ul class="list-unstyled m-0 overflow-hidden">
 								<?php for( $i = 0; $i < $count_menu; $i++ ) { ?>
-								<li class="mr-3"><a href="<?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
+								<li class="mr-3"><a href="<?php echo $prex . get_post_meta( $home_page_ID, 'menu_' . $i . '_link_menu', true ); ?>" class="cursor-pointer"><?php echo get_post_meta( $home_page_ID, 'menu_' . $i . '_text_menu', true ); ?></a></li>
 								<?php } ?>
 							</ul>
 						</div>

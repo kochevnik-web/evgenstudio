@@ -12,7 +12,8 @@
  * @package evgenstudio
  */
 
-get_header();
+	get_header();
+
 ?>
 
 	<div id="primary" class="content-area">
@@ -89,6 +90,19 @@ get_header();
 			</div>
 		</section>
 
+		<div class="uslugi-modal-wrapper-global position-fixed">
+			<div class="position-relative w-100 h-100">
+				<button class="close-uslugi-modal position-absolute">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/close.svg">
+				</button>
+				<div class="uslugi-modal">
+					<div class="uslugi-modal-content-2">
+	
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<?php $projects = get_post_meta( $post->ID, 'projects', true ); ?>
 		<?php if( (bool)$projects && $projects > 0 ) { ?>
 		<?php
@@ -138,7 +152,7 @@ get_header();
 				?>
 				<div class="project_item mb-5" data-sort="<?php echo $data_sort; ?>">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-6 mb-3 mb-lg-0">
 							<img class="project_item_img" src="<?php echo get_the_post_thumbnail_url( $post_pro->ID, 'kreditka-thumb' )?>" alt="<?php echo $post_pro->post_title ?>">
 						</div>
 						<div class="col-md-6 project-content">
@@ -201,7 +215,7 @@ get_header();
 						</div>
 						<?php } ?>
 					</div>
-					<div class="col-md-5 offset-md-1">
+					<div class="col-md-5 offset-md-1" id="contact-form">
 						<h3 class="mb-5 color-white">Оставить заявку</h3>
 						<?php if ( (bool)get_post_meta( $post->ID, 'cf7', true ) ) { ?>
 							<div class="contact_form">

@@ -88,15 +88,24 @@ jQuery( document ).ready( function( $ ) {
         }
     });
 
-    $(document).on('click','.uslugi-item span', function(){
-        var uslugiModal = document.querySelector('.uslugi-modal-wrapper');
-        if(uslugiModal.style.opacity == 0){
-            uslugiModal.classList.add('show');
-            uslugiModal.classList.remove('hide');
-            uslugiModal.style.opacity = 1;
-        }
-        $('.uslugi-modal-content').html($(this).parent().find('.uslugi-content').html());
-    });
+    if($(document).width() >= 991){
+        $(document).on('click','.uslugi-item span', function(){
+            var uslugiModal = document.querySelector('.uslugi-modal-wrapper');
+            if(uslugiModal.style.opacity == 0){
+                uslugiModal.classList.add('show');
+                uslugiModal.classList.remove('hide');
+                uslugiModal.style.opacity = 1;
+            }
+            $('.uslugi-modal-content').html($(this).parent().find('.uslugi-content').html());
+        });
+    } else {
+        $(document).on('click','.uslugi-item span', function(){
+            $('.uslugi-modal-wrapper-global').show();
+            $('.uslugi-modal-content-2').html($(this).parent().find('.uslugi-content').html());
+            $('body').addClass('overflowy-hidden');
+        });
+    }
+
 
     $(document).on('click','.close-uslugi-modal', function(){
         var uslugiModal = document.querySelector('.uslugi-modal-wrapper');
@@ -105,6 +114,8 @@ jQuery( document ).ready( function( $ ) {
             uslugiModal.classList.remove('show');
             uslugiModal.style.opacity = 0;
         }
+        $('body').removeClass('overflowy-hidden');
+        $('.uslugi-modal-wrapper-global').hide();
     });
 
     $(document).on('click','.close-project-modal', function(){
@@ -127,6 +138,18 @@ jQuery( document ).ready( function( $ ) {
         });
     });
 
+    $(document).on('click','.hamburger', function(){
+        if($(this).hasClass('is-active')){
+            $(this).removeClass('is-active');
+            $('body').removeClass('overflowy-hidden');
+            $('.menu-mobile').slideUp('300');
+        } else {
+            $(this).addClass('is-active');
+            $('.menu-mobile').slideDown('300');
+            $('body').addClass('overflowy-hidden');
+        }
+    });
+
 
     //Скрол главного меню
     let scrollDataMenu = 0;
@@ -146,6 +169,9 @@ jQuery( document ).ready( function( $ ) {
     });
 
     $('a[href^="#"]').click( function(){
+        $('.hamburger').removeClass('is-active');
+        $('body').removeClass('overflowy-hidden');
+        $('.menu-mobile').slideUp('300');
         var scroll_el = $(this).attr('href');
         var destination = $(scroll_el).offset().top;
         if ($(scroll_el).length != 0) {
