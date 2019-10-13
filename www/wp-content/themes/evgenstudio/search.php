@@ -12,44 +12,46 @@ get_header();
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
+		<div class="container">
+				<div class="row">
+					<div class="col-12">
 
-		<?php if ( have_posts() ) : ?>
+						<?php echo get_search_query(); ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'evgenstudio' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+							<?php if ( have_posts() ) : ?>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+								<header class="page-header">
+									<h1 class="page-title">Поиск по сайту</h1>
+								</header><!-- .page-header -->
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
+								<?php
+								/* Start the Loop */
+								while ( have_posts() ) :
+									the_post();
 
-			the_posts_navigation();
+								?>
+									<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+										<header class="entry-header">
+											<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		else :
+										</header><!-- .entry-header -->
 
-			get_template_part( 'template-parts/content', 'none' );
+									</article><!-- #post-<?php the_ID(); ?> -->
 
-		endif;
-		?>
+									<?php
+								endwhile;
 
+							else :
+
+							endif;
+						?>
+					</div>
+				</div>
+			</div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();
