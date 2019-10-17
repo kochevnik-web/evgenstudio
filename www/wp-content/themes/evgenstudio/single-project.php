@@ -21,8 +21,8 @@ get_header();
 				<div class="row">
 					<div class="col-12">
 						<div class="mb-4">
-							<h1><?php the_title(); ?></h1>
-							<div class="project_cat">
+							<h1 class="px-0 px-lg-5"><?php the_title(); ?></h1>
+							<div class="project_cat px-0 px-lg-5">
 								<?php
 									$post_pro_cat = get_the_terms( $post->ID, 'project_cat' );
 									$terms_pro = '';
@@ -35,7 +35,7 @@ get_header();
 								?>
 							</div>
 						</div>
-						<div class="d-flex mb-4 justify-content-between">
+						<div class="d-flex mb-4 justify-content-between px-0 px-lg-5">
 							<div class="single-project-offer">
 								<?php if ( (bool)get_post_meta( $post->ID, 'name_offer', true ) || (bool)get_post_meta( $post->ID, 'city', true ) || (bool)get_post_meta( $post->ID, 'year', true ) ) { ?>
 								<?php $context = trim( get_post_meta( $post->ID, 'city', true ) . ', ' . get_post_meta( $post->ID, 'year', true ), ', ' ); ?>

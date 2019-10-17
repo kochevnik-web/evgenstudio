@@ -585,6 +585,35 @@ h4, .h4 {
     font-size: 14px;
 }
 
+.the_content {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 200%;
+}
+
+.the_content .caption {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 200%;
+    text-align: center;
+    color: #7A7A7A;
+}
+
+.the_content ul, .the_content ol {
+    padding: 0;
+    margin: 0;
+}
+
+.the_content .line-left {
+    border-left: 1px solid #ccc;
+}
+
+.the_content .line-top {
+    border-top: 1px solid #ccc;
+}
+
 @media( max-width: 991px ) {
 
     h2, .h2 {
