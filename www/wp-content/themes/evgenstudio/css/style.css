@@ -660,6 +660,24 @@ h4, .h4 {
     margin-bottom: 150px;
 }
 
+.swiper-button-next {
+    right: 20px;
+    text-align: center;
+    background: #fff;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
+.swiper-button-prev {
+    left: 20px;
+    text-align: center;
+    background: #fff;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
 @media( max-width: 991px ) {
 
     h2, .h2 {

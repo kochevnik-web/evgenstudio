@@ -126,6 +126,7 @@ function evgenstudio_scripts() {
 	wp_enqueue_style( 'preloader-style', get_template_directory_uri() . '/css/preloader.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'hamburgers', get_template_directory_uri() . '/css/hamburgers.min.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.min.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all' );
 
@@ -134,6 +135,7 @@ function evgenstudio_scripts() {
 	wp_enqueue_script( 'evgenstudio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.min.js', array(), '1.0.0', true );
 
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
 
@@ -222,5 +224,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 	add_action( 'init', 'registr_kreditka' );
 	add_action( 'init', 'registr_cat_kreditka' );
+
+	function evgenstudio_galary_shortcode( $atts ) {
+
+		global $post;
+		$galary = get_post_meta( $post->ID, 'galary', true );
+
+		if ( !(bool)$galary || count( $galary ) == 0 ) return '';
+
+		$html = '<div class="swiper-container">';
+		$html .= '<div class="swiper-wrapper">';
+
+		foreach ( $galary as $item ) {
+			$img = wp_get_attachment_image_url( $item, 'full' );
+			$html .= '<div class="swiper-slide"><img src="' . $img . '" ></div>';
+		}
+
+		$html .= '</div>';
+		
+		$html .= '<div class="swiper-button-next"></div>';
+		$html .= '<div class="swiper-button-prev"></div>';
+		$html .= '</div>';
+		
+		return $html;
+
+    }
+
+    add_shortcode( 'evgenstudio_galary', 'evgenstudio_galary_shortcode' );
+
 
 
