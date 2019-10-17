@@ -9,6 +9,15 @@ body {
     /* or 24px */
 }
 
+a, a:active, a:visited {
+    color: #01B8ED;
+}
+
+a:hover {
+    color: #01B8ED;
+    opacity: .8;
+}
+
 h1, .h1 {
     font-family: Montserrat;
     font-style: normal;
@@ -408,6 +417,10 @@ h4, .h4 {
     justify-content: space-between;
 }
 
+.search-results .project-content {
+    border-bottom: 1px solid #ccc;
+}
+
 .project-content {
     display: flex;
     flex-direction: column;
@@ -612,6 +625,39 @@ h4, .h4 {
 
 .the_content .line-top {
     border-top: 1px solid #ccc;
+}
+
+.search-form .search-submit {
+    width: 100%;
+    border-radius: 3px;
+    background: #01B8ED;
+    border: 1px solid #01B8ED;
+    color: #FFFFFF;
+    padding: 18px;
+}
+
+.search-form .search-submit:hover {
+    opacity: .8;
+}
+
+.search-form label {
+    width: 100%;
+}
+
+.search-form .search-field {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #C8DAE0;
+    padding: 12px;
+}
+
+.non-search-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.search-results {
+    margin-bottom: 150px;
 }
 
 @media( max-width: 991px ) {

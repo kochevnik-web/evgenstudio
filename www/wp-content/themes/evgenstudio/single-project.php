@@ -60,8 +60,8 @@ get_header();
 						<?php } ?>
 
 						<div class="nex-post text-center">
-							<?php $next_post =  get_adjacent_post( false, '', false, 'project_cat' ); ?>
-							<?php if ( $next_post->ID > 0 ) { ?>
+							<?php $next_post = get_adjacent_post( false, '', false, 'project_cat' ); ?>
+							<?php if ( (bool)$next_post && $next_post->ID > 0 ) { ?>
 								<a href="<?php echo get_permalink( $next_post->ID ); ?>">Следующий проект</a>
 								<img class="ml-3" src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg" alt="">
 							<?php } ?>
