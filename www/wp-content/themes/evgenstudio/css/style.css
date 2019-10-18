@@ -71,7 +71,10 @@ h4, .h4 {
 }
 
 .overflowy-hidden {
-    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
 }
 
 .color-white {
