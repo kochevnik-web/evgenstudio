@@ -232,7 +232,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 		if ( !(bool)$galary || count( $galary ) == 0 ) return '';
 
-		$html = '<div class="swiper-container">';
+		$html = '<div class="position-relative">';
+
+		$html .= '<div class="swiper-container">';
 		$html .= '<div class="swiper-wrapper">';
 
 		foreach ( $galary as $item ) {
@@ -241,9 +243,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		}
 
 		$html .= '</div>';
-		
+
+		$html .= '</div>';
+
+		$html .= '<div class="swiper-pagination"></div>';
+
 		$html .= '<div class="swiper-button-next"></div>';
 		$html .= '<div class="swiper-button-prev"></div>';
+
 		$html .= '</div>';
 		
 		return $html;
